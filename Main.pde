@@ -1,3 +1,8 @@
+// Alan Perry
+// 10/25/17
+// program that takes data in from an arduino with 16 photoresistors and displays that information
+// as a representation of piece positions on a chess board.
+
 import processing.serial.*;
 
 boolean debugMode = false;
@@ -92,6 +97,7 @@ void draw () {
   }
 }
 
+// debug information on sensor data
 void drawSensorStatus() {
   noStroke();
   for (int i = 0; i < 4; i++) {
@@ -109,7 +115,8 @@ void drawSensorStatus() {
     println();
   } 
 }
- //<>//
+
+// keypress functions
 void keyPressed() {
   if (key == '1') {
     establishContact();
@@ -127,6 +134,7 @@ void keyPressed() {
   }
 }
 
+// not used
 void mousePressed() {
   clicker++;
 }
