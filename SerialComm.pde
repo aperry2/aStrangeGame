@@ -6,9 +6,10 @@ void serialEvent (Serial myPort) {
     if (inString != null) {
       // trim off any whitespace:
       inString = trim(inString);
-      String newString[] = split(inString, '\t');
-      for (int i = 0; i < 16; i++) {
+      String newString[] = split(inString, ',');
+      for (int i = 0; i < 64; i++) { // 64 is the current working number of sensors
         data[i] = int(newString[i]);
+        //data[i] = data[i] / 4;
       }
     }
     myPort.clear();
